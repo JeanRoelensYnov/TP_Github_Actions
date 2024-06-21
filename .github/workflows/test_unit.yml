@@ -24,3 +24,9 @@ jobs:
     - name: Run tests
       run: |
         python main.py  # Assurez-vous que le chemin vers main.py est correct
+    - name: Build Docker image
+      run: |
+        docker build -t my-python-app .
+    - name: Run Docker container
+      run: |
+        docker run my-python-app
