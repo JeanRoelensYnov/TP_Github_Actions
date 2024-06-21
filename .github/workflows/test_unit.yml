@@ -1,7 +1,9 @@
-name: Python package
+name: Python run test
 on: [push]
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
-    - run: python main.py
+    - name: run-test 
+      run: |
+        python main.py
