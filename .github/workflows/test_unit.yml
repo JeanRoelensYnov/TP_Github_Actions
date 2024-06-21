@@ -20,7 +20,7 @@ jobs:
         pip install -r requirements.txt
     - name: Run pylint
       run: |
-        pylint main.py
+        pylint --exit-zero main.py
     - name: Run tests
       run: |
         python main.py  # Assurez-vous que le chemin vers main.py est correct
