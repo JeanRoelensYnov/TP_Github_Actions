@@ -1,9 +1,22 @@
 name: Python run test
-on: [push]
+on:
+  push:
+    branches:
+      - main
 jobs:
   test:
     runs-on: ubuntu-latest
+    
     steps:
-    - name: run-test 
+    - name: Checkout repository
+      uses: actions/checkout@v2  # Vérifie le dépôt pour récupérer le code
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
       run: |
-        python ./main.py
+        python -m pip install --upgrade pip
+    - name: Run tests
+      run: |
+        python main.py  # Assurez-vous que le chemin vers main.py est correct
