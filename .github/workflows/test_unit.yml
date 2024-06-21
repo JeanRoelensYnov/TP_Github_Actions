@@ -6,4 +6,4 @@ jobs:
     steps:
     - name: run-test 
       run: |
-        python main.py
+        python ./main.py
